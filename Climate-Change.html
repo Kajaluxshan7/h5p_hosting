@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate-Change</title>
+    <link rel="stylesheet" href="assets/styles/h5p.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #h5p-container {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .h5p-iframe-wrapper {
+        padding: 5px 5px;
+        width: 79% !important;
+        height: 100vh !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="h5p-container"></div>
+
+    <script type="text/javascript" src="assets/main.bundle.js"></script>
+    <script>
+      const el = document.getElementById("h5p-container");
+      const options = {
+        h5pJsonPath: "/Climate-Change",
+        frameJs: "/assets/frame.bundle.js",
+        frameCss: "/assets/styles/h5p.css",
+      };
+      new H5PStandalone.H5P(el, options).then(function () {
+        H5P.externalDispatcher.on("xAPI", (event) => {
+          console.log("xAPI event: ", event);
+        });
+      });
+    </script>
+  </body>
+</html>
