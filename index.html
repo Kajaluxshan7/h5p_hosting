@@ -35,15 +35,14 @@
     <script>
       const el = document.getElementById("h5p-container");
       const options = {
-        h5pJsonPath: "testing_h5p",
+        h5pJsonPath: "h5p_hosting",
         frameJs: "assets/frame.bundle.js",
         frameCss: "assets/styles/h5p.css",
       };
       new H5PStandalone.H5P(el, options).then(function () {
         H5P.externalDispatcher.on("xAPI", (event) => {
           console.log("xAPI event: ", event);
-        });
-      });
+          
     </script>
   </body>
 </html>
